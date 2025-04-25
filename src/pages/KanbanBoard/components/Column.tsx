@@ -34,7 +34,12 @@ export default function Column({
         as="div"
         className="px-4 py-2 font-medium border-b border-border"
       >
-        {column.title}
+        <div className="flex flex-col">
+          <span>{column.title}</span>
+          <span className="text-xs text-default-500">
+            Double-click a card to delete it
+          </span>
+        </div>
       </CardHeader>
 
       <Droppable droppableId={column.id} type="CARD">
