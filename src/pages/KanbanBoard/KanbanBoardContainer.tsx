@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { DragDropContext, DropResult } from "@hello-pangea/dnd";
 import Column from "./components/Column";
 import LoadingOverlay from "./components/LoadingOverlay";
