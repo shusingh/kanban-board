@@ -2,6 +2,8 @@
 
 A modern, responsive Kanban board application built with React, TypeScript, and Vite. This project provides a clean and intuitive interface for managing tasks using the Kanban methodology.
 
+🌐 **Live Demo:** [kanban-board-6ty7.onrender.com](https://kanban-board-6ty7.onrender.com)
+
 ## Features
 
 - 🎯 Drag and drop functionality for seamless task management
