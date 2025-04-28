@@ -1,50 +1,85 @@
-# Vite & HeroUI Template
+# Kanban Board
 
-This is a template for creating applications using Vite and HeroUI (v2).
+A modern, responsive Kanban board application built with React, TypeScript, and Vite. This project provides a clean and intuitive interface for managing tasks using the Kanban methodology.
 
-[Try it on CodeSandbox](https://githubbox.com/frontio-ai/vite-template)
+## Features
 
-## Technologies Used
+- 🎯 Drag and drop functionality for seamless task management
+- 💾 Local storage persistence for your boards
+- 🎨 Modern UI with HeroUI components
+- 📱 Responsive design that works on all devices
+- 🌙 Dark mode support
+- ⚡ Fast and performant with Vite
 
-- [Vite](https://vitejs.dev/guide/)
-- [HeroUI](https://heroui.com)
-- [Tailwind CSS](https://tailwindcss.com)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Framer Motion](https://www.framer.com/motion)
+## Tech Stack
 
-## How to Use
+- React 19
+- TypeScript
+- Vite
+- HeroUI Components
+- Tailwind CSS
+- @hello-pangea/dnd for drag and drop
+- React Router for navigation
 
-To clone the project, run the following command:
+## Getting Started
+
+### Prerequisites
+
+- Node.js (Latest LTS version recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
 
 ```bash
-git clone https://github.com/frontio-ai/vite-template.git
+git clone [your-repo-url]
+cd kanban-board
 ```
 
-### Install dependencies
-
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+2. Install dependencies
 
 ```bash
 npm install
+# or
+yarn install
 ```
 
-### Run the development server
+3. Start the development server
 
 ```bash
 npm run dev
+# or
+yarn dev
 ```
 
-### Setup pnpm (optional)
+4. Open your browser and navigate to `http://localhost:5173`
 
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
+## Available Scripts
 
-```bash
-public-hoist-pattern[]=*@heroui/*
+- `npm run dev` - Start the development server
+- `npm run build` - Build the project for production
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint to check code quality
+
+## Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── pages/         # Page components
+├── layouts/       # Layout components
+├── types/         # TypeScript type definitions
+├── utils/         # Utility functions
+├── data/          # Default data and constants
+├── styles/        # Global styles
+└── config/        # Configuration files
 ```
 
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-Licensed under the [MIT license](https://github.com/frontio-ai/vite-template/blob/main/LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
