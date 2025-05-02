@@ -16,25 +16,13 @@ import { GithubIcon, LinkedInIcon, DeveloperIcon } from '@/components/icons';
 
 const NavActions: React.FC<{ className?: string }> = ({ className }) => (
   <div className={`flex items-center gap-4 ${className}`}>
-    <HeroLink
-      isExternal
-      aria-label="Visit our GitHub repository"
-      href={siteConfig.links.github}
-    >
+    <HeroLink isExternal aria-label="Visit our GitHub repository" href={siteConfig.links.github}>
       <GithubIcon className="text-default-500" />
     </HeroLink>
-    <HeroLink
-      isExternal
-      aria-label="Visit our LinkedIn page"
-      href={siteConfig.links.linkedin}
-    >
+    <HeroLink isExternal aria-label="Visit our LinkedIn page" href={siteConfig.links.linkedin}>
       <LinkedInIcon className="text-default-500" />
     </HeroLink>
-    <HeroLink
-      isExternal
-      aria-label="Visit my portfolio"
-      href={siteConfig.links.portfolio}
-    >
+    <HeroLink isExternal aria-label="Visit my portfolio" href={siteConfig.links.portfolio}>
       <DeveloperIcon className="text-default-500" />
     </HeroLink>
     <ThemeSwitch />
@@ -53,9 +41,7 @@ export const Navbar: React.FC = () => {
     >
       {/* mobile: toggle + title */}
       <NavbarContent className="pl-4 sm:hidden" justify="start">
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-        />
+        <NavbarMenuToggle aria-label={isMenuOpen ? 'Close menu' : 'Open menu'} />
         <RouterLink className="ml-4 text-xl font-semibold" to="/">
           {siteConfig.name}
         </RouterLink>
@@ -64,7 +50,7 @@ export const Navbar: React.FC = () => {
       {/* desktop: title left */}
       <NavbarContent className="hidden sm:flex" justify="start">
         <RouterLink className="text-xl font-semibold" to="/">
-        {siteConfig.name}
+          {siteConfig.name}
         </RouterLink>
       </NavbarContent>
 

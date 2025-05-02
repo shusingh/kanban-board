@@ -1,5 +1,5 @@
-import { Draggable } from "@hello-pangea/dnd";
-import type { CardType } from "@/types/board";
+import { Draggable } from '@hello-pangea/dnd';
+import type { CardType } from '@/types/board';
 import {
   Modal,
   ModalContent,
@@ -8,8 +8,8 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-} from "@heroui/react";
-import { Card as HUICard, CardBody } from "@heroui/card";
+} from '@heroui/react';
+import { Card as HUICard, CardBody } from '@heroui/card';
 
 export type CardProps = {
   card: CardType;
@@ -18,18 +18,13 @@ export type CardProps = {
   onDelete: () => void;
 };
 
-export default function Card({
-  card,
-  index,
-  colorClass = "",
-  onDelete,
-}: CardProps) {
+export default function Card({ card, index, colorClass = '', onDelete }: CardProps) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   return (
     <>
       <Draggable draggableId={card.id} index={index}>
-        {(provided) => (
+        {provided => (
           <div
             ref={provided.innerRef}
             {...provided.draggableProps}
@@ -37,11 +32,7 @@ export default function Card({
             className="w-full cursor-grab"
             onDoubleClick={onOpen}
           >
-            <HUICard
-              className={`w-full ${colorClass}`}
-              radius="md"
-              shadow="none"
-            >
+            <HUICard className={`w-full ${colorClass}`} radius="md" shadow="none">
               <CardBody>{card.title}</CardBody>
             </HUICard>
           </div>
@@ -50,12 +41,10 @@ export default function Card({
 
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
-          {(onClose) => (
+          {onClose => (
             <>
               <ModalHeader>Delete Card</ModalHeader>
-              <ModalBody>
-                Are you sure you want to delete "{card.title}"?
-              </ModalBody>
+              <ModalBody>Are you sure you want to delete "{card.title}"?</ModalBody>
               <ModalFooter className="space-x-2">
                 <Button color="danger" variant="light" onPress={onClose}>
                   Cancel

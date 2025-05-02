@@ -1,5 +1,5 @@
-import KanbanBoardContainer from "./KanbanBoardContainer";
-import DefaultLayout from "@/layouts/default";
+import KanbanBoardContainer from './KanbanBoardContainer';
+import DefaultLayout from '@/layouts/default';
 
 export default function KanbanBoardPage() {
   return (

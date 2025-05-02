@@ -5,19 +5,9 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number;
 };
 
-export const GithubIcon: React.FC<IconSvgProps> = ({
-  height,
-  size = 24,
-  width,
-  ...props
-}) => {
+export const GithubIcon: React.FC<IconSvgProps> = ({ height, size = 24, width, ...props }) => {
   return (
-    <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
-      {...props}
-    >
+    <svg height={size || height} viewBox="0 0 24 24" width={size || width} {...props}>
       <path
         clipRule="evenodd"
         d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
@@ -28,19 +18,9 @@ export const GithubIcon: React.FC<IconSvgProps> = ({
   );
 };
 
-export const LinkedInIcon: React.FC<IconSvgProps> = ({
-  height,
-  size = 24,
-  width,
-  ...props
-}) => {
+export const LinkedInIcon: React.FC<IconSvgProps> = ({ height, size = 24, width, ...props }) => {
   return (
-    <svg
-      height={size || height}
-      viewBox="0 0 24 24"
-      width={size || width}
-      {...props}
-    >
+    <svg height={size || height} viewBox="0 0 24 24" width={size || width} {...props}>
       <path
         d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"
         fill="currentColor"
@@ -49,12 +29,7 @@ export const LinkedInIcon: React.FC<IconSvgProps> = ({
   );
 };
 
-export const MoonFilledIcon = ({
-  height,
-  size = 24,
-  width,
-  ...props
-}: IconSvgProps) => (
+export const MoonFilledIcon = ({ height, size = 24, width, ...props }: IconSvgProps) => (
   <svg
     aria-hidden="true"
     focusable="false"
@@ -71,12 +46,7 @@ export const MoonFilledIcon = ({
   </svg>
 );
 
-export const SunFilledIcon = ({
-  height,
-  size = 24,
-  width,
-  ...props
-}: IconSvgProps) => (
+export const SunFilledIcon = ({ height, size = 24, width, ...props }: IconSvgProps) => (
   <svg
     aria-hidden="true"
     focusable="false"
@@ -93,12 +63,7 @@ export const SunFilledIcon = ({
   </svg>
 );
 
-export const DeveloperIcon: React.FC<IconSvgProps> = ({
-  height,
-  size = 24,
-  width,
-  ...props
-}) => (
+export const DeveloperIcon: React.FC<IconSvgProps> = ({ height, size = 24, width, ...props }) => (
   <svg
     aria-labelledby="devIconTitle devIconDesc"
     fill="none"
@@ -115,9 +80,7 @@ export const DeveloperIcon: React.FC<IconSvgProps> = ({
     {...props}
   >
     <title id="devIconTitle">Developer Avatar</title>
-    <desc id="devIconDesc">
-      A modern developer avatar with a creative design
-    </desc>
+    <desc id="devIconDesc">A modern developer avatar with a creative design</desc>
     <path d="M183.967 86.9455C252.62 12.0977 244.517 75.8891 263.023 85.1447C268.275 87.7725 275.324 85.0069 279.193 83.347" />
     <path d="M219.968 106.121C241.931 80.0587 278.638 143.309 281.516 119.913" />
     <path d="M157.258 63.7549C121.516 74.7106 105.852 117.17 121.513 148.401" />

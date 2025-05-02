@@ -1,7 +1,7 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom';
 
-import LandingPage from "./pages/LandingPage/LandingPage";
-import KanbanBoard from "./pages/KanbanBoard/KanbanBoard";
+import LandingPage from './pages/LandingPage/LandingPage';
+import KanbanBoard from './pages/KanbanBoard/KanbanBoard';
 
 function App() {
   return (

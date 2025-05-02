@@ -1,8 +1,8 @@
-import { Droppable } from "@hello-pangea/dnd";
-import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
-import type { ColumnType } from "@/types/board";
-import CardComponent from "./Card";
-import AddCardForm from "./AddCardForm";
+import { Droppable } from '@hello-pangea/dnd';
+import { Card, CardHeader, CardBody, CardFooter } from '@heroui/card';
+import type { ColumnType } from '@/types/board';
+import CardComponent from './Card';
+import AddCardForm from './AddCardForm';
 
 export type ColumnProps = {
   column: ColumnType;
@@ -10,18 +10,14 @@ export type ColumnProps = {
   onDeleteCard: (columnId: string, cardId: string) => void;
 };
 
-export default function Column({
-  column,
-  onAddCard,
-  onDeleteCard,
-}: ColumnProps) {
+export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps) {
   const bgColors = [
-    "bg-red-100 dark:bg-red-900",
-    "bg-yellow-100 dark:bg-yellow-900",
-    "bg-green-100 dark:bg-green-900",
+    'bg-red-100 dark:bg-red-900',
+    'bg-yellow-100 dark:bg-yellow-900',
+    'bg-green-100 dark:bg-green-900',
   ];
   const idx = column.position;
-  const cardBgClass = bgColors[idx] || "bg-default-100";
+  const cardBgClass = bgColors[idx] || 'bg-default-100';
 
   return (
     <Card
@@ -30,20 +26,15 @@ export default function Column({
       shadow="none"
       radius="md"
     >
-      <CardHeader
-        as="div"
-        className="px-4 py-2 font-medium border-b border-border"
-      >
+      <CardHeader as="div" className="px-4 py-2 font-medium border-b border-border">
         <div className="flex flex-col">
           <span>{column.title}</span>
-          <span className="text-xs text-default-500">
-            Double-click a card to delete it
-          </span>
+          <span className="text-xs text-default-500">Double-click a card to delete it</span>
         </div>
       </CardHeader>
 
       <Droppable droppableId={column.id} type="CARD">
-        {(provided) => (
+        {provided => (
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
@@ -66,7 +57,7 @@ export default function Column({
       </Droppable>
 
       <CardFooter as="div" className="p-2 border-t border-border">
-        <AddCardForm onAdd={(title) => onAddCard(column.id, title)} />
+        <AddCardForm onAdd={title => onAddCard(column.id, title)} />
       </CardFooter>
     </Card>
   );
