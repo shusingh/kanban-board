@@ -1,6 +1,5 @@
-import { Link } from '@heroui/link';
-
-import { Navbar } from '@/components/navbar';
+import { Link } from "@heroui/link";
+import { Navbar } from "@/components/navbar";
 
 export default function DefaultLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -11,10 +10,10 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
         <div className="flex items-center gap-2">
           <Link
             isExternal
+            showAnchorIcon
+            className="text-primary"
             href="https://github.com/shusingh"
             title="GitHub"
-            className="text-primary"
-            showAnchorIcon
           >
             <p className="text-default-400">Made with ❤️ by Shubham</p>
           </Link>

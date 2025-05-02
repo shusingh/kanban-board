@@ -1,4 +1,4 @@
-import { Spinner } from '@heroui/react';
+import { Spinner } from "@heroui/react";
 
 export default function LoadingOverlay() {
   return (

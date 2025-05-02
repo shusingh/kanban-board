@@ -1,13 +1,10 @@
-import type { BoardType, CardType } from '@/types/board';
-
-import { useState, useEffect } from 'react';
-import { DragDropContext, DropResult } from '@hello-pangea/dnd';
-
-import Column from './components/Column';
-import LoadingOverlay from './components/LoadingOverlay';
-
-import { loadBoard, saveBoard } from '@/utils/storage';
-import { defaultBoard } from '@/data/defaultBoard';
+import type { BoardType, CardType } from "@/types/board";
+import { useState, useEffect } from "react";
+import { DragDropContext, DropResult } from "@hello-pangea/dnd";
+import Column from "./components/Column";
+import LoadingOverlay from "./components/LoadingOverlay";
+import { loadBoard, saveBoard } from "@/utils/storage";
+import { defaultBoard } from "@/data/defaultBoard";
 
 export default function KanbanBoardContainer() {
   const [board, setBoard] = useState<BoardType | null>(null);

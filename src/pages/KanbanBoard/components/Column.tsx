@@ -1,8 +1,8 @@
-import { Droppable } from '@hello-pangea/dnd';
-import { Card, CardHeader, CardBody, CardFooter } from '@heroui/card';
-import type { ColumnType } from '@/types/board';
-import CardComponent from './Card';
-import AddCardForm from './AddCardForm';
+import type { ColumnType } from "@/types/board";
+import { Droppable } from "@hello-pangea/dnd";
+import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
+import CardComponent from "./Card";
+import AddCardForm from "./AddCardForm";
 
 export type ColumnProps = {
   column: ColumnType;
@@ -12,12 +12,12 @@ export type ColumnProps = {
 
 export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps) {
   const bgColors = [
-    'bg-red-100 dark:bg-red-900',
-    'bg-yellow-100 dark:bg-yellow-900',
-    'bg-green-100 dark:bg-green-900',
+    "bg-red-100 dark:bg-red-900",
+    "bg-yellow-100 dark:bg-yellow-900",
+    "bg-green-100 dark:bg-green-900",
   ];
   const idx = column.position;
-  const cardBgClass = bgColors[idx] || 'bg-default-100';
+  const cardBgClass = bgColors[idx] || "bg-default-100";
 
   return (
     <Card
