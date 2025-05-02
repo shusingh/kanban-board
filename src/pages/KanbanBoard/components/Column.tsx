@@ -11,25 +11,20 @@ export type ColumnProps = {
 };
 
 export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps) {
-  const bgColors = [
-    "bg-red-100 dark:bg-red-900",
-    "bg-yellow-100 dark:bg-yellow-900",
-    "bg-green-100 dark:bg-green-900",
-  ];
-  const idx = column.position;
-  const cardBgClass = bgColors[idx] || "bg-default-100";
+  // Using a consistent color for all cards
+  const cardBgClass = "bg-[#F5F5F5] dark:bg-[#22272B]";
 
   return (
     <Card
       as="div"
-      className="flex-1 flex flex-col h-full bg-default-100 text-foreground"
+      className="flex-1 flex flex-col h-full bg-gray-200 dark:bg-[#161A1D] text-foreground"
+      radius="sm"
       shadow="none"
-      radius="md"
     >
-      <CardHeader as="div" className="px-4 py-2 font-medium border-b border-border">
-        <div className="flex flex-col">
-          <span>{column.title}</span>
-          <span className="text-xs text-default-500">Double-click a card to delete it</span>
+      <CardHeader as="div" className="px-4 py-2 font-medium">
+        <div className="flex items-baseline justify-between">
+          <span className="text-base">{column.title}</span>
+          <span className="text-xs -mb-0.5 ml-2">{column.cards.length}</span>
         </div>
       </CardHeader>
 
@@ -45,8 +40,8 @@ export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps)
                 <CardComponent
                   key={card.id}
                   card={card}
-                  index={idx}
                   colorClass={`${cardBgClass} text-foreground`}
+                  index={idx}
                   onDelete={() => onDeleteCard(column.id, card.id)}
                 />
               ))}
@@ -56,7 +51,7 @@ export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps)
         )}
       </Droppable>
 
-      <CardFooter as="div" className="p-2 border-t border-border">
+      <CardFooter as="div" className="p-2">
         <AddCardForm onAdd={title => onAddCard(column.id, title)} />
       </CardFooter>
     </Card>
