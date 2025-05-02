@@ -26,7 +26,6 @@ export default function AddCardForm({ onAdd }: AddCardFormProps) {
     <div className="flex gap-2 items-center w-full">
       <Input
         fullWidth
-        isRequired
         placeholder="New task (press Enter to add)"
         value={title}
         onChange={e => setTitle(e.target.value)}
