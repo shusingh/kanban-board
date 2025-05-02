@@ -34,7 +34,7 @@ export default function Card({ card, index, colorClass = "", onDelete }: CardPro
           >
             <HUICard className={`w-full ${colorClass}`} radius="sm" shadow="none">
               <CardBody className="grid grid-cols-[1fr,auto] gap-2">
-                <div className="flex items-center">{card.title}</div>
+                <div className="flex items-center text-default-500">{card.title}</div>
                 <div className="flex items-center">
                   <button
                     onClick={onOpen}

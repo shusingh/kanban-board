@@ -23,8 +23,8 @@ export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps)
     >
       <CardHeader as="div" className="px-4 py-2 font-medium">
         <div className="flex items-baseline justify-between">
-          <span className="text-base">{column.title}</span>
-          <span className="text-xs -mb-0.5 ml-2">{column.cards.length}</span>
+          <span className="text-base text-default-500">{column.title}</span>
+          <span className="text-xs -mb-0.5 ml-2 text-default-500">{column.cards.length}</span>
         </div>
       </CardHeader>
 
