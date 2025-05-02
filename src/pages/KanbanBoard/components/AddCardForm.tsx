@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Input } from "@heroui/react";
+import { Input, Button } from "@heroui/react";
+import { Plus } from "lucide-react";
 
 type AddCardFormProps = {
   onAdd: (title: string) => void;
@@ -8,24 +9,33 @@ type AddCardFormProps = {
 export default function AddCardForm({ onAdd }: AddCardFormProps) {
   const [title, setTitle] = useState("");
 
+  const handleAdd = () => {
+    const trimmed = title.trim();
+    if (!trimmed) return;
+    onAdd(trimmed);
+    setTitle("");
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      const trimmed = title.trim();
-
-      if (!trimmed) return;
-      onAdd(trimmed);
-      setTitle("");
+      handleAdd();
     }
   };
 
   return (
-    <Input
-      fullWidth
-      isRequired
-      placeholder="New task (press Enter to add)"
-      value={title}
-      onChange={e => setTitle(e.target.value)}
-      onKeyDown={handleKeyDown}
-    />
+    <div className="flex gap-2 items-center w-full">
+      <Input
+        fullWidth
+        isRequired
+        placeholder="New task (press Enter to add)"
+        value={title}
+        onChange={e => setTitle(e.target.value)}
+        onKeyDown={handleKeyDown}
+        className="flex-1"
+      />
+      <Button isIconOnly variant="light" size="sm" onClick={handleAdd} className="min-w-8 h-10">
+        <Plus className="w-4 h-4" />
+      </Button>
+    </div>
   );
 }

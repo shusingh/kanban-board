@@ -17,7 +17,7 @@ export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps)
   return (
     <Card
       as="div"
-      className="flex-1 flex flex-col h-full bg-gray-200 dark:bg-[#161A1D] text-foreground"
+      className="flex-1 flex flex-col h-[calc(100vh-18rem)] bg-gray-200 dark:bg-[#161A1D] text-foreground"
       radius="sm"
       shadow="none"
     >
@@ -33,7 +33,7 @@ export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps)
           <div
             ref={provided.innerRef}
             {...provided.droppableProps}
-            className="flex-1 overflow-y-auto px-2 py-1"
+            className="flex-1 overflow-y-auto px-2 py-1 min-h-0"
           >
             <CardBody className="h-full flex flex-col space-y-2">
               {column.cards.map((card, idx) => (
@@ -51,7 +51,7 @@ export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps)
         )}
       </Droppable>
 
-      <CardFooter as="div" className="p-2">
+      <CardFooter as="div" className="px-2 py-2">
         <AddCardForm onAdd={title => onAddCard(column.id, title)} />
       </CardFooter>
     </Card>

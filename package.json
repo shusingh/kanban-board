@@ -34,6 +34,7 @@
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-router-dom": "^7.5.2",
+    "tailwind-scrollbar": "^4.0.2",
     "tailwind-variants": "1.0.0",
     "vite-template": "file:"
   },

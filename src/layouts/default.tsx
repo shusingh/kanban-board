@@ -15,7 +15,7 @@ export default function DefaultLayout({ children }: { children: React.ReactNode 
             href="https://github.com/shusingh"
             title="GitHub"
           >
-            <p className="text-default-400">Made with ❤️ by Shubham</p>
+            <p className="text-default-400 text-sm">Made with ❤️ by Shubham</p>
           </Link>
         </div>
       </footer>

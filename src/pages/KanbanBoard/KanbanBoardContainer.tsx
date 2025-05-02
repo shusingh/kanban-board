@@ -1,13 +1,17 @@
 import type { BoardType, CardType } from "@/types/board";
 import { useState, useEffect } from "react";
 import { DragDropContext, DropResult } from "@hello-pangea/dnd";
+import { Button, useDisclosure } from "@heroui/react";
+import { Trash2 } from "lucide-react";
 import Column from "./components/Column";
 import LoadingOverlay from "./components/LoadingOverlay";
 import { loadBoard, saveBoard } from "@/utils/storage";
 import { defaultBoard } from "@/data/defaultBoard";
+import ConfirmationModal from "@/components/ConfirmationModal";
 
 export default function KanbanBoardContainer() {
   const [board, setBoard] = useState<BoardType | null>(null);
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   useEffect(() => {
     const saved = loadBoard();
@@ -16,6 +20,18 @@ export default function KanbanBoardContainer() {
   }, []);
 
   const makeId = () => crypto.randomUUID();
+
+  const handleClearBoard = () => {
+    if (!board) return;
+    const updated = { ...board };
+
+    updated.columns = updated.columns.map(col => ({
+      ...col,
+      cards: [],
+    }));
+    setBoard(updated);
+    saveBoard(updated);
+  };
 
   const handleAddCard = (columnId: string, title: string) => {
     if (!board) return;
@@ -73,17 +89,38 @@ export default function KanbanBoardContainer() {
   if (!board) return <LoadingOverlay />;
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className="flex h-full space-x-4 overflow-x-auto px-2 py-2">
-        {board.columns.map(col => (
-          <Column
-            key={col.id}
-            column={col}
-            onAddCard={handleAddCard}
-            onDeleteCard={handleDeleteCard}
-          />
-        ))}
+    <div className="flex flex-col h-full">
+      <div className="flex justify-end mb-4">
+        <Button
+          color="danger"
+          startContent={<Trash2 className="w-4 h-4" />}
+          variant="light"
+          onPress={onOpen}
+        >
+          Clear Board
+        </Button>
       </div>
-    </DragDropContext>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <div className="flex h-full space-x-4 overflow-x-auto px-2 py-2">
+          {board.columns.map(col => (
+            <Column
+              key={col.id}
+              column={col}
+              onAddCard={handleAddCard}
+              onDeleteCard={handleDeleteCard}
+            />
+          ))}
+        </div>
+      </DragDropContext>
+
+      <ConfirmationModal
+        confirmText="Clear"
+        isOpen={isOpen}
+        message="Are you sure you want to clear all cards from the board? This action cannot be undone."
+        title="Clear Board"
+        onConfirm={handleClearBoard}
+        onOpenChange={onOpenChange}
+      />
+    </div>
   );
 }

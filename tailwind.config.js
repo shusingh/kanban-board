@@ -1,4 +1,5 @@
 import { heroui } from "@heroui/theme";
+import scrollbar from "tailwind-scrollbar";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -32,5 +33,6 @@ export default {
         },
       },
     }),
+    scrollbar,
   ],
 };

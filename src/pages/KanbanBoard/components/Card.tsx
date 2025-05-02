@@ -1,16 +1,9 @@
 import type { CardType } from "@/types/board";
 import { Draggable } from "@hello-pangea/dnd";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  useDisclosure,
-} from "@heroui/react";
+import { useDisclosure } from "@heroui/react";
 import { Card as HUICard, CardBody } from "@heroui/card";
 import { Trash2 } from "lucide-react";
+import ConfirmationModal from "@/components/ConfirmationModal";
 
 export type CardProps = {
   card: CardType;
@@ -37,9 +30,9 @@ export default function Card({ card, index, colorClass = "", onDelete }: CardPro
                 <div className="flex items-center text-default-500">{card.title}</div>
                 <div className="flex items-center">
                   <button
-                    onClick={onOpen}
-                    className="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
                     aria-label="Delete card"
+                    className="p-1 rounded-full hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+                    onClick={onOpen}
                   >
                     <Trash2 className="w-4 h-4 text-gray-500 dark:text-gray-400" />
                   </button>
@@ -50,30 +43,14 @@ export default function Card({ card, index, colorClass = "", onDelete }: CardPro
         )}
       </Draggable>
 
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-        <ModalContent>
-          {onClose => (
-            <>
-              <ModalHeader>Delete Card</ModalHeader>
-              <ModalBody>Are you sure you want to delete this task?</ModalBody>
-              <ModalFooter className="space-x-2">
-                <Button variant="light" onPress={onClose}>
-                  Cancel
-                </Button>
-                <Button
-                  color="primary"
-                  onPress={() => {
-                    onDelete();
-                    onClose();
-                  }}
-                >
-                  Delete
-                </Button>
-              </ModalFooter>
-            </>
-          )}
-        </ModalContent>
-      </Modal>
+      <ConfirmationModal
+        confirmText="Delete"
+        isOpen={isOpen}
+        message="Are you sure you want to delete this task?"
+        title="Delete Card"
+        onConfirm={onDelete}
+        onOpenChange={onOpenChange}
+      />
     </>
   );
 }
