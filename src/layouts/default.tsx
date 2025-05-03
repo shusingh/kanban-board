@@ -1,5 +1,5 @@
 import { Navbar } from "@/components/navbar";
-import { siteConfig } from "@/config/site";
+import { Footer } from "@/components/footer";
 
 interface DefaultLayoutProps {
   children: React.ReactNode;
@@ -16,10 +16,8 @@ export default function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
     <div className="relative flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-1">{children}</main>
-      <footer className="w-full flex items-center justify-center py-3 bg-background">
-        <p className="text-default-500">Made with ❤️ by {siteConfig.author}</p>
-      </footer>
+      <main className="flex-1 container mx-auto px-4">{children}</main>
+      <Footer />
     </div>
   );
 }
