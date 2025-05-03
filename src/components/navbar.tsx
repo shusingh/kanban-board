@@ -12,6 +12,7 @@ import {
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, LinkedInIcon, DeveloperIcon } from "@/components/icons";
+import { title } from "@/components/primitives";
 
 const NavActions: React.FC<{ className?: string }> = ({ className }) => (
   <div className={`flex items-center gap-4 ${className}`}>
@@ -41,14 +42,14 @@ export const Navbar: React.FC = () => {
       {/* mobile: toggle + title */}
       <NavbarContent className="pl-4 sm:hidden" justify="start">
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-        <RouterLink className="ml-4 text-xl font-semibold text-default-600" to="/">
+        <RouterLink className={title({ color: "success", size: "xs" })} to="/">
           {siteConfig.name}
         </RouterLink>
       </NavbarContent>
 
       {/* desktop: title left */}
       <NavbarContent className="hidden sm:flex" justify="start">
-        <RouterLink className="text-xl font-semibold text-default-600" to="/">
+        <RouterLink className={title({ color: "success", size: "xs" })} to="/">
           {siteConfig.name}
         </RouterLink>
       </NavbarContent>

@@ -9,10 +9,12 @@ export const title = tv({
       blue: "from-[#5EA2EF] to-[#0072F5]",
       cyan: "from-[#00b7fa] to-[#01cfea]",
       green: "from-[#6FEE8D] to-[#17c964]",
+      success: "from-[#4ADE80] to-[#22C55E]",
       pink: "from-[#FF72E1] to-[#F54C7A]",
       foreground: "dark:from-[#FFFFFF] dark:to-[#4B4B4B]",
     },
     size: {
+      xs: "text-xl lg:text-2xl",
       sm: "text-3xl lg:text-4xl",
       md: "text-[2.3rem] lg:text-5xl leading-9",
       lg: "text-4xl lg:text-6xl",
@@ -26,7 +28,7 @@ export const title = tv({
   },
   compoundVariants: [
     {
-      color: ["violet", "yellow", "blue", "cyan", "green", "pink", "foreground"],
+      color: ["violet", "yellow", "blue", "cyan", "green", "success", "pink", "foreground"],
       class: "bg-clip-text text-transparent bg-gradient-to-b",
     },
   ],

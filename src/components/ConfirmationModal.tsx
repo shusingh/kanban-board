@@ -24,14 +24,15 @@ export default function ConfirmationModal({
       <ModalContent>
         {onClose => (
           <>
-            <ModalHeader>{title}</ModalHeader>
-            <ModalBody>{message}</ModalBody>
+            <ModalHeader className="text-default-600">{title}</ModalHeader>
+            <ModalBody className="text-default-500">{message}</ModalBody>
             <ModalFooter className="space-x-2">
               <Button variant="light" onPress={onClose}>
                 {cancelText}
               </Button>
               <Button
                 color="primary"
+                variant="flat"
                 onPress={() => {
                   onConfirm();
                   onClose();
