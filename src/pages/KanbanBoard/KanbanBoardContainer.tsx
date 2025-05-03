@@ -9,13 +9,18 @@ import { loadBoard, saveBoard } from "@/utils/storage";
 import { defaultBoard } from "@/data/defaultBoard";
 import ConfirmationModal from "@/components/ConfirmationModal";
 
+/**
+ * KanbanBoardContainer component that manages the state and interactions of the Kanban board
+ *
+ * @component
+ * @returns {JSX.Element} The rendered Kanban board with columns, cards, and management features
+ */
 export default function KanbanBoardContainer() {
   const [board, setBoard] = useState<BoardType | null>(null);
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   useEffect(() => {
     const saved = loadBoard();
-
     setBoard(saved ?? defaultBoard);
   }, []);
 

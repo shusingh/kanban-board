@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import { Input, Button } from "@heroui/react";
 import { Plus } from "lucide-react";
 
-type AddCardFormProps = {
+interface AddCardFormProps {
   onAdd: (title: string) => void;
-};
+}
 
+/**
+ * AddCardForm component that provides a form to add new cards to a column
+ *
+ * @component
+ * @param {AddCardFormProps} props - The props for the AddCardForm component
+ * @returns {JSX.Element} The rendered form with input and submit button
+ */
 export default function AddCardForm({ onAdd }: AddCardFormProps) {
   const [title, setTitle] = useState("");
 

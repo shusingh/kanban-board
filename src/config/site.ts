@@ -19,4 +19,5 @@ export const siteConfig = {
     linkedin: "https://www.linkedin.com/in/shusingh/",
     portfolio: "https://shusingh.github.io/",
   },
+  author: "Shubham",
 };

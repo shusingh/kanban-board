@@ -1,6 +1,7 @@
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button } from "@heroui/react";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter } from "@heroui/modal";
+import { Button } from "@heroui/button";
 
-type ConfirmationModalProps = {
+interface ConfirmationModalProps {
   isOpen: boolean;
   onOpenChange: (isOpen: boolean) => void;
   title: string;
@@ -8,8 +9,15 @@ type ConfirmationModalProps = {
   onConfirm: () => void;
   confirmText?: string;
   cancelText?: string;
-};
+}
 
+/**
+ * ConfirmationModal component that displays a modal dialog for confirming actions
+ *
+ * @component
+ * @param {ConfirmationModalProps} props - The props for the ConfirmationModal component
+ * @returns {JSX.Element} The rendered confirmation modal with header, body, and footer
+ */
 export default function ConfirmationModal({
   isOpen,
   onOpenChange,

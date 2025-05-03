@@ -4,13 +4,20 @@ import { Card, CardHeader, CardBody, CardFooter } from "@heroui/card";
 import CardComponent from "./Card";
 import AddCardForm from "./AddCardForm";
 
-export type ColumnProps = {
+interface ColumnProps {
   column: ColumnType;
   onAddCard: (columnId: string, title: string) => void;
   onDeleteCard: (columnId: string, cardId: string) => void;
   onEditCard: (columnId: string, cardId: string, title: string) => void;
-};
+}
 
+/**
+ * Column component that represents a single column in the Kanban board
+ *
+ * @component
+ * @param {ColumnProps} props - The props for the Column component
+ * @returns {JSX.Element} The rendered column with cards and add card form
+ */
 export default function Column({ column, onAddCard, onDeleteCard, onEditCard }: ColumnProps) {
   // Using a consistent color for all cards
   const cardBgClass = "bg-[#F5F5F5] dark:bg-[#22272B]";

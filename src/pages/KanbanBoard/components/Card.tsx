@@ -8,14 +8,21 @@ import { MoreVertical, Trash2, Pencil, X, Check } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import ConfirmationModal from "@/components/ConfirmationModal";
 
-export type CardProps = {
+interface CardProps {
   card: CardType;
   index: number;
   colorClass?: string;
-  onDelete: () => void;
-  onEdit: (title: string) => void;
-};
+  onDelete: (columnId: string, cardId: string) => void;
+  onEdit: (columnId: string, cardId: string, title: string) => void;
+}
 
+/**
+ * Card component that represents a single task card in a Kanban board column
+ *
+ * @component
+ * @param {CardProps} props - The props for the Card component
+ * @returns {JSX.Element} The rendered card with drag handle and action menu
+ */
 export default function Card({ card, index, colorClass = "", onDelete, onEdit }: CardProps) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [isEditing, setIsEditing] = useState(false);
@@ -29,8 +36,10 @@ export default function Card({ card, index, colorClass = "", onDelete, onEdit }:
   }, [isEditing]);
 
   const handleSave = () => {
-    onEdit(editedTitle);
-    setIsEditing(false);
+    if (editedTitle.trim()) {
+      onEdit(card.columnId, card.id, editedTitle.trim());
+      setIsEditing(false);
+    }
   };
 
   const handleDiscard = () => {
@@ -127,9 +136,9 @@ export default function Card({ card, index, colorClass = "", onDelete, onEdit }:
       <ConfirmationModal
         confirmText="Delete"
         isOpen={isOpen}
-        message="Are you sure you want to delete this task?"
+        message="Are you sure you want to delete this task? This action cannot be undone."
         title="Delete Card"
-        onConfirm={onDelete}
+        onConfirm={() => onDelete(card.columnId, card.id)}
         onOpenChange={onOpenChange}
       />
     </>

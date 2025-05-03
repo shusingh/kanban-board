@@ -1,23 +1,24 @@
-import { Link } from "@heroui/link";
 import { Navbar } from "@/components/navbar";
+import { siteConfig } from "@/config/site";
 
-export default function DefaultLayout({ children }: { children: React.ReactNode }) {
+interface DefaultLayoutProps {
+  children: React.ReactNode;
+}
+
+/**
+ * DefaultLayout component that provides the basic structure for all pages
+ *
+ * @component
+ * @param {DefaultLayoutProps} props - The props for the DefaultLayout component
+ * @returns {JSX.Element} The rendered layout with navbar, main content, and footer
+ */
+export default function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
-    <div className="relative flex flex-col h-screen">
+    <div className="relative flex min-h-screen flex-col">
       <Navbar />
-      <main className="container mx-auto max-w-7xl px-6 flex-grow pt-16">{children}</main>
-      <footer className="w-full flex items-center justify-center py-3">
-        <div className="flex items-center gap-2">
-          <Link
-            isExternal
-            showAnchorIcon
-            className="text-primary"
-            href="https://github.com/shusingh"
-            title="GitHub"
-          >
-            <p className="text-default-400 text-sm">Made with ❤️ by Shubham</p>
-          </Link>
-        </div>
+      <main className="flex-1">{children}</main>
+      <footer className="w-full flex items-center justify-center py-3 bg-background">
+        <p className="text-default-500">Made with ❤️ by {siteConfig.author}</p>
       </footer>
     </div>
   );
