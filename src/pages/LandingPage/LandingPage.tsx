@@ -10,10 +10,10 @@ export default function LandingPage() {
     <DefaultLayout>
       <section className="flex flex-col items-center justify-center gap-4 py-12 md:py-16">
         <div className="inline-block max-w-lg justify-center text-center">
-          <span className={title()}>Organize Your&nbsp;</span>
+          <span className={title()}>Get Your&nbsp;</span>
           <span className={title({ color: "success" })}>Tasks&nbsp;</span>
           <br />
-          <span className={title()}>With Kanban</span>
+          <span className={title()}>In Order, The Fun Way!</span>
           <div className={subtitle({ class: "mt-8" })}>{siteConfig.description}</div>
         </div>
 
@@ -42,10 +42,12 @@ export default function LandingPage() {
           {/* Feature 1: Theme Switching */}
           <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 items-center">
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-default-600">Seamless Theme Switching</h3>
+              <h3 className="text-2xl font-semibold text-default-600">
+                Light or Dark? You Choose!
+              </h3>
               <p className="text-default-500">
-                Experience the perfect balance of light and dark modes. Switch between themes
-                effortlessly to match your environment and preferences.
+                Whether you&apos;re a night owl or an early bird, switch between themes with a
+                single click. Your eyes will thank you!
               </p>
             </div>
             <div className="flex justify-center">
@@ -71,11 +73,13 @@ export default function LandingPage() {
               </div>
             </div>
             <div className="space-y-4 order-1 md:order-2">
-              <h3 className="text-2xl font-semibold text-default-600">Intuitive Task Management</h3>
+              <h3 className="text-2xl font-semibold text-default-600">
+                Drag, Drop, and Get Stuff Done
+              </h3>
               <p className="text-default-500">
-                Create, organize, and track your tasks with ease. Drag and drop tasks between
-                columns to update their status from &apos;To Do&apos; to &apos;In Progress&apos; to
-                &apos;Done&apos;.
+                Move tasks around like a boss! From &quot;To Do&quot; to &quot;In Progress&quot; to
+                &quot;Done&quot; - it&apos;s as easy as dragging and dropping. No stress, just
+                progress.
               </p>
             </div>
           </div>
@@ -83,10 +87,12 @@ export default function LandingPage() {
           {/* Feature 3: Card Actions */}
           <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 items-center">
             <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-default-600">Powerful Card Actions</h3>
+              <h3 className="text-2xl font-semibold text-default-600">
+                Quick Actions, Zero Hassle
+              </h3>
               <p className="text-default-500">
-                Edit, delete, or clear your board with just a few clicks. Our intuitive interface
-                makes task management a breeze.
+                Edit, delete, or start fresh - all at your fingertips. Managing tasks has never been
+                this smooth!
               </p>
             </div>
             <div className="flex justify-center">

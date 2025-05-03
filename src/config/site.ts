@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 export const siteConfig = {
   name: "Kanban Board",
   description:
-    "Streamline your workflow with our intuitive Kanban board. Simple drag-and-drop task management.",
+    "Say goodbye to task chaos! Our super-simple Kanban board makes organizing your work a breeze. Just drag, drop, and watch your productivity soar!",
   navItems: [
     {
       label: "Home",
