@@ -11,12 +11,21 @@
   height: 100%;
   background-color: var(--background);
   background-image:
-    linear-gradient(to right, rgba(0, 0, 0, 0.15) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+    linear-gradient(to right, var(--dotted-line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--dotted-line-color) 1px, transparent 1px);
   background-size: 24px 24px;
   opacity: 1;
   z-index: 0;
   pointer-events: none;
+}
+
+/* Define the dotted line color based on theme */
+:root {
+  --dotted-line-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] {
+  --dotted-line-color: rgba(0, 0, 0, 0.15);
 }
 
 /* Scroll indicator */
