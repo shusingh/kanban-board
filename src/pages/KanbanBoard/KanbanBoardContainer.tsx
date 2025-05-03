@@ -64,6 +64,22 @@ export default function KanbanBoardContainer() {
     saveBoard(updated);
   };
 
+  const handleEditCard = (columnId: string, cardId: string, title: string) => {
+    if (!board) return;
+    const updated = { ...board };
+    const col = updated.columns.find(c => c.id === columnId);
+
+    if (col) {
+      const card = col.cards.find(c => c.id === cardId);
+
+      if (card) {
+        card.title = title;
+      }
+    }
+    setBoard(updated);
+    saveBoard(updated);
+  };
+
   const onDragEnd = (result: DropResult) => {
     if (!result.destination || !board) return;
     const updated = { ...board };
@@ -108,6 +124,7 @@ export default function KanbanBoardContainer() {
               column={col}
               onAddCard={handleAddCard}
               onDeleteCard={handleDeleteCard}
+              onEditCard={handleEditCard}
             />
           ))}
         </div>

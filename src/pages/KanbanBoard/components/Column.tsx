@@ -8,9 +8,10 @@ export type ColumnProps = {
   column: ColumnType;
   onAddCard: (columnId: string, title: string) => void;
   onDeleteCard: (columnId: string, cardId: string) => void;
+  onEditCard: (columnId: string, cardId: string, title: string) => void;
 };
 
-export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps) {
+export default function Column({ column, onAddCard, onDeleteCard, onEditCard }: ColumnProps) {
   // Using a consistent color for all cards
   const cardBgClass = "bg-[#F5F5F5] dark:bg-[#22272B]";
 
@@ -43,6 +44,7 @@ export default function Column({ column, onAddCard, onDeleteCard }: ColumnProps)
                   colorClass={`${cardBgClass} text-foreground`}
                   index={idx}
                   onDelete={() => onDeleteCard(column.id, card.id)}
+                  onEdit={title => onEditCard(column.id, card.id, title)}
                 />
               ))}
               {provided.placeholder}

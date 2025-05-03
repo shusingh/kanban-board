@@ -20,14 +20,14 @@ export default function LandingPage() {
           <Link
             aria-label="Kanban Board"
             className={button({
-              color: "primary",
-              variant: "shadow",
-              radius: "full",
+              color: "success",
+              radius: "md",
+              variant: "flat",
               class: `inline-flex transform-gpu items-center gap-2 px-6 py-3 antialiased transition duration-200 will-change-transform hover:scale-105 active:scale-95`,
             })}
             href="/kanban-board"
           >
-            <span className="font-medium">Start</span>
+            <span className="font-medium">View Board</span>
           </Link>
         </div>
       </section>
