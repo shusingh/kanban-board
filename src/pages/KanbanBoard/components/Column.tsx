@@ -51,7 +51,7 @@ export default function Column({ column, onAddCard, onDeleteCard, onEditCard }: 
                   colorClass={`${cardBgClass} text-foreground`}
                   index={idx}
                   onDelete={() => onDeleteCard(column.id, card.id)}
-                  onEdit={title => onEditCard(column.id, card.id, title)}
+                  onEdit={onEditCard}
                 />
               ))}
               {provided.placeholder}
